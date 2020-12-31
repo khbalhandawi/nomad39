@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,36 +18,58 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ext\sgtelib\src\Kernel.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Matrix.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Metrics.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\sgtelib.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\sgtelib_help.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_CN.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Ensemble.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Factory.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Kriging.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_KS.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_LOWESS.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Parameters.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_PRS.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_PRS_CAT.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_PRS_EDGE.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_RBF.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Utils.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\Tests.cpp" />
+    <ClCompile Include="..\ext\sgtelib\src\TrainingSet.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{09D22858-085C-424B-A1EC-5D539F8C447D}</ProjectGuid>
     <Keyword>X64Proj</Keyword>
     <RootNamespace>sgtelib</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -131,6 +153,7 @@
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\ext\sgtelib\src\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -156,55 +179,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\ext\sgtelib\src\Defines.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Exception.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Kernel.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Matrix.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Metrics.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\sgtelib.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\sgtelib_help.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_CN.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_Ensemble.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_Factory.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_Kriging.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_KS.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_LOWESS.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_Parameters.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_PRS.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_PRS_CAT.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_PRS_EDGE.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_RBF.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Surrogate_Utils.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\Tests.hpp" />
-    <ClInclude Include="..\ext\sgtelib\src\TrainingSet.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\ext\sgtelib\src\Kernel.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Matrix.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Metrics.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\sgtelib.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\sgtelib_help.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_CN.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Ensemble.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Factory.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Kriging.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_KS.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_LOWESS.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Parameters.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_PRS.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_PRS_CAT.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_PRS_EDGE.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_RBF.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Surrogate_Utils.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\Tests.cpp" />
-    <ClCompile Include="..\ext\sgtelib\src\TrainingSet.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

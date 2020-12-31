@@ -2975,7 +2975,7 @@ NOMAD::Direction NOMAD::Mads::get_single_dynamic_direction (const std::list<NOMA
             V[i] = 0.0;
         // Continous variables or GMesh+granularity  ---> rounding towards mesh node.
         // If GMesh and variable is binary --> it is considered as an integer (ordered) with bounds [0;1] (snap to bound done later)
-        else if ( input_types[i] == NOMAD::CONTINUOUS || ( _p.get_mesh_type()==NOMAD::GMESH && (_p.get_granularity())[i] != 0.0 ) )
+        else if ( input_types[i] == NOMAD::CONTINUOUS || ( _p.get_mesh_type()==NOMAD::GMESH && (cur_signature->get_granularity())[i] != 0.0 ) )
         {
             NOMAD::Double d1 = vb1/dm;
             NOMAD::Double d2 = v/dm;

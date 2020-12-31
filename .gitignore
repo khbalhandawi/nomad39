@@ -3,6 +3,8 @@ tools/
 bin/
 ext/
 examples/
+VisualStudio/.vs/
+VisualStudio/x64/
 *.exe
 *.in
 *.dll

@@ -56,7 +56,7 @@
 namespace NOMAD {
     
     /// Evaluation point signature.
-    class Signature {
+    class DLL_API Signature {
         
         private:
         

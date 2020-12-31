@@ -488,7 +488,7 @@ namespace NOMAD {
      \param d2 The second NOMAD::Double -- \b IN.
      \return   A third NOMAD::Double as the result of the operation.
      */
-    const Double operator / ( const Double & d1 , const Double & d2 );
+	const DLL_API Double operator / (const Double & d1, const Double & d2);
     
     /// Comparison operator \c ==.
     /**
