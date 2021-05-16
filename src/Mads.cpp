@@ -1345,7 +1345,9 @@ void NOMAD::Mads::iteration ( bool                     & stop           ,
             _mesh->update ( success );
         
         // check the min mesh/poll sizes stopping criteria
-        _mesh->check_min_mesh_sizes( stop , stop_reason );
+        if (_p.get_max_bb_eval() == -1) {
+            _mesh->check_min_mesh_sizes( stop , stop_reason );
+        }
         
         
         // if the Delta_k^p stopping criterion is met with integer variables,
