@@ -1,7 +1,6 @@
 utils/
 tools/
 bin/
-ext/
 examples/
 VisualStudio/.vs/
 VisualStudio/x64/
@@ -10,3 +9,6 @@ VisualStudio/x64/
 *.dll
 *.exp
 *.lib
+
+build
+.vscode
