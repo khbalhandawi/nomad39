@@ -20,6 +20,13 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 endif()
 message(STATUS "  Installation prefix set to ${CMAKE_INSTALL_PREFIX}")
 
+set(CMAKE_INSTALL_BINDIR bin)
+set(CMAKE_INSTALL_LIBDIR bin)
+
+#-------------------------------------------------------------------------------
+#	ADD SUBPROJECTS
+#-------------------------------------------------------------------------------
+
 # add subdirectories for each project
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/ext)
 #
@@ -84,6 +91,7 @@ target_include_directories(${TARGET_NAME} PRIVATE
 install(TARGETS ${TARGET_NAME} 
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}  
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/
 )
 
