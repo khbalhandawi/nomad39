@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "x64",
+            "includePath": [
+                "/src/**",
+                "/ext/sgtelib/include/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22000.0",
+            "compilerPath": "${VC_ExcecutablePath_x64}/cl.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}

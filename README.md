@@ -1,6 +1,6 @@
 # NOMAD 3.9.1 with CMake
 
-This is a highly customized version of [NOMAD 3.9.1](https://www.gerad.ca/nomad/) for the purpose of working categorical variables built on the crossplatform build tool CMake.
+This is a highly customized version of [NOMAD 3.9.1](https://www.gerad.ca/nomad/) for the purpose of working with categorical variables. This version is also built with the cross-platform build tool `CMake`.
 
 
 # Description
@@ -23,10 +23,19 @@ that will be directly called by NOMAD, without system calls and temporary files.
 # Executables
 
 On Windows and Mac OS X platforms, NOMAD batch mode executable is located in
-directory `$NOMAD_HOME/build/bin` or `%NOMAD_HOME%\build\bin`.
-In order to avoid compiling the code, you can simply use this executable.
+directory `$NOMAD_HOME_PERSONAL/build/bin` or `%NOMAD_HOME_PERSONAL%\build\bin` after succesful compilation.
 
-# Compilation
+Please be sure to set the environment variables `NOMAD_HOME_PERSONAL` to the directory where this repository is cloned.
+
+# Installation and Compilation
+
+First clone this repository recurisevely (to include the source files of `SGTELIB`)
+
+```bash
+git clone --recursive https://github.com/khbalhandawi/nomad39.git 
+```
+
+be sure to set your `NOMAD_HOME_PERSONAL` environment variable to point to the path of the above repository.
 
 On Linux, Unix, and Mac OS X, NOMAD can be compiled using the CMake file as follows:
 
@@ -34,11 +43,10 @@ make a directory called `build`
 
 ```bash
 cd build
-cmake -S .. -B Release
+cmake -S .. -B Release -DCMAKE_BUILD_TYPE="Release"
 cmake --build Release --config Release
-cmake --install Release
+cmake --install Release --config Release
 ```
-
 
 # Execute NOMAD
 

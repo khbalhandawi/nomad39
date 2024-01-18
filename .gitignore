@@ -11,4 +11,5 @@ VisualStudio/x64/
 *.lib
 
 build
-.vscode
+.vscode/*
+!.vscode/c_cpp_properties.json
