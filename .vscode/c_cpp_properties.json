@@ -3,8 +3,8 @@
         {
             "name": "x64",
             "includePath": [
-                "/src/**",
-                "/ext/sgtelib/include/**"
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/ext/sgtelib/include/**"
             ],
             "defines": [
                 "_DEBUG",
