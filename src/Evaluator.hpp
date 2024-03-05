@@ -185,6 +185,9 @@ namespace NOMAD {
         virtual void update_success ( const NOMAD::Stats      & stats ,
                                      const NOMAD::Eval_Point & x       ) {}
 
+        virtual void update_partial_success ( const NOMAD::Stats      & stats ,
+                                             const NOMAD::Eval_Point & x       ) {}
+
         /// User updates after an iteration.
         /**
          This virtual method is called every time a MADS iteration is terminated.

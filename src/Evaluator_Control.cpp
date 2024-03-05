@@ -291,9 +291,20 @@ void NOMAD::Evaluator_Control::process_eval_point ( const NOMAD::Eval_Point & x 
         }
         
         // single-objective: call virtual method Evaluator::update_success():
-        else if ( _p.get_user_calls_enabled() &&
-                 barrier.get_one_eval_succ() == NOMAD::FULL_SUCCESS )
-            _ev->update_success ( _stats , x );
+        else if ( _p.get_user_calls_enabled()) {
+
+            switch (barrier.get_one_eval_succ())
+            {
+                case (NOMAD::FULL_SUCCESS):
+                    _ev->update_success ( _stats , x );
+                    break;
+                case (NOMAD::PARTIAL_SUCCESS):
+                    _ev->update_partial_success ( _stats , x );
+                    break;
+            }
+            
+        }
+
     }
 }
 
